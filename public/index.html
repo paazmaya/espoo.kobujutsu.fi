@@ -6,10 +6,7 @@
     <title>Espoon Yuishinkai ry</title>
     <meta name="description" content="Ryukyu Kobujutsua ja Yuishinkai Karatea Espoossa">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
+    <link rel="apple-touch-icon" href="rkhsk-nunchaku-icon-60.png">
     <style>
 
       html, body {
@@ -170,7 +167,33 @@
       <p><a href="https://github.com/paazmaya/espoo.kobujutsu.fi" title="Muokkaa sivuja GitHub-palvelun kautta">&copy; Espoon Yuishinkai ry</a></p>
     </footer>
 
-    <script></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/offline-service-worker.js', {scope: '/'}).then(function(reg) {
+        // registration worked
+        console.log('Registration succeeded. Scope is ' + reg.scope);
+
+        // Send the settings to the service worker
+        var messenger = reg.installing || navigator.serviceWorker.controller;
+        messenger.postMessage({'action': 'set-settings', 'settings': {}});
+        /*
+
+   * The settings object supports the following options:
+   * - `content-url`        (String)  The content to display when user is offline (url to the content that will be served)
+   * - `content`            (String)  The content to display when user is offline (plain text, HTML, etc.)
+   * - `assets`             (Array)   Array of assets to cache for offline access
+   * - `cache-version`      (String|Number) Optional version number, change this when offline files change. UpUp will download and cache all content-url and assets files again
+   * - `service-worker-url` (String)  The url to the service worker file (`upup.sw.min.js`)
+   *                                  Allows loading `upup.min.js` from a CDN while `upup.sw.min.js` stays local (see [scope](https://github.com/TalAter/UpUp/blob/master/docs/README.md#scope))
+   *
+        */
+
+      }).catch(function(error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      });
+    }
+    </script>
 
     <script>
       window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;

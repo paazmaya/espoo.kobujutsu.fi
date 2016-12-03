@@ -12,16 +12,26 @@
 
     <style>
 
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+
       html {
         color: black;
         font-size: 1em;
         line-height: 1.4;
         font-family: 'Lora', serif;
+        min-width: 28em;
+        background-color: #2f2926;
       }
 
-      html, body {
-        margin: 0;
-        padding: 0;
+      body {
+        background-color: white;
+      }
+
+      a, a:visited {
+        color: #2f2926;
       }
 
       header, section, footer {
@@ -29,13 +39,23 @@
         padding: 0.5em 1em;
       }
 
-      header, footer {
-        background: cornflowerblue;
+      header, footer, header a, footer a, header a:visited, footer a:visited {
+        background: #2f2926;
         color: white;
+        text-shadow: 0 0 1em #2f2926;
+        text-decoration: none;
+      }
+
+      header {
+        background-image: url('nunchaku-top.png');
+        background-size: cover;
+        height: 20em;
+        background-position: 0em 100%;
       }
 
       h2 {
-        border-bottom: 2px solid cornflowerblue;
+        border-bottom: 2px solid #2f2926;
+        outline: none;
       }
 
       ::-moz-selection {
@@ -67,6 +87,8 @@
       .logo {
         width: 100px;
         height: 100px;
+        float: left;
+        margin-right: 1em;
       }
 
       h2 a {
@@ -74,13 +96,14 @@
         width: 100%;
         text-decoration: none;
         color: black;
+        outline: none;
       }
 
       h2:hover a::after {
         content: '#';
         display: block;
         position: absolute;
-        color: cornflowerblue;
+        color: #2f2926;
         top: 0;
         right: -1.2em;
         width: 1em;
@@ -144,7 +167,7 @@
     </section>
 
     <footer>
-      <p>&copy; Espoon Yuishinkai ry</p>
+      <p><a href="https://github.com/paazmaya/espoo.kobujutsu.fi" title="Muokkaa sivuja GitHub-palvelun kautta">&copy; Espoon Yuishinkai ry</a></p>
     </footer>
 
     <script></script>

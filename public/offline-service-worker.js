@@ -1,7 +1,9 @@
 
+var cacheName = 'v2';
+
 this.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v1').then(function(cache) {
+    caches.open(cacheName).then(function(cache) {
       return cache.addAll([
         '/',
         '/index.html',
@@ -25,17 +27,32 @@ this.addEventListener('fetch', function(event) {
         return resp;
       }
       return fetch(event.request).then(function(response) {
-        caches.open('v1').then(function(cache) {
+        return caches.open(cacheName).then(function(cache) {
           cache.put(event.request, response.clone());
+          return response;
         }).catch(function(error) {
           console.error(error);
         });
-        return response;
       }).catch(function(error) {
         console.error(error);
       });
     }).catch(function() {
       return caches.match('/offline.html');
+    })
+  );
+});
+
+// Remove any caches that are not the current
+this.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (key !== cacheName) {
+          return caches.delete(key);
+        }
+
+        return true;
+      }));
     })
   );
 });

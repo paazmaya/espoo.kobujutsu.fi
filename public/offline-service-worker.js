@@ -12,6 +12,8 @@ this.addEventListener('install', function(event) {
         '/yuishinkai-logo.svg',
         '/offline.html'
       ]);
+    }).catch(function(error) {
+      console.error(error);
     })
   );
 });
@@ -25,8 +27,12 @@ this.addEventListener('fetch', function(event) {
       return fetch(event.request).then(function(response) {
         caches.open('v1').then(function(cache) {
           cache.put(event.request, response.clone());
+        }).catch(function(error) {
+          console.error(error);
         });
         return response;
+      }).catch(function(error) {
+        console.error(error);
       });
     }).catch(function() {
       return caches.match('/offline.html');

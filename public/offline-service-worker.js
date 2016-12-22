@@ -1,5 +1,5 @@
 
-var cacheName = '20161221';
+var cacheName = '20161222';
 
 this.addEventListener('install', function(event) {
   event.waitUntil(
@@ -29,7 +29,7 @@ this.addEventListener('fetch', function(event) {
       }
       return fetch(event.request).then(function(response) {
         return caches.open(cacheName).then(function(cache) {
-          cache.put(event.request, response.clone());
+          // cache.put(event.request, response.clone());
           return response;
         }).catch(function(error) {
           console.error(error);

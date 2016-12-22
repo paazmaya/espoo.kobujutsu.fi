@@ -1,5 +1,5 @@
 
-var cacheName = 'v2';
+var cacheName = '20161221';
 
 this.addEventListener('install', function(event) {
   event.waitUntil(

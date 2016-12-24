@@ -1,19 +1,24 @@
 
-var cacheName = '20161222';
+var cacheName = '20161224a';
+
+var cacheFiles = [
+  '/',
+  '/index.html',
+  '/favicon.ico',
+  '/ohjaaja-jukka.jpg',
+  '/ohjaaja-kari.jpg',
+  '/ohjaaja-kimmo.jpg',
+  '/rkhsk-nunchaku.png',
+  '/rkhsk-nunchaku-icon-60.png',
+  '/rkhsk-logo.svg',
+  '/yuishinkai-logo.svg',
+  '/offline.html'
+];
 
 this.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/favicon.ico',
-        '/rkhsk-nunchaku.png',
-        '/rkhsk-nunchaku-icon-60.png',
-        '/rkhsk-logo.svg',
-        '/yuishinkai-logo.svg',
-        '/offline.html'
-      ]);
+      return cache.addAll(cacheFiles);
     }).catch(function(error) {
       console.error(error);
     })
@@ -23,17 +28,13 @@ this.addEventListener('install', function(event) {
 this.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(resp) {
+      console.log('event.request.url', event.request.url);
       console.log('resp', resp);
       if (resp) {
         return resp;
       }
       return fetch(event.request).then(function(response) {
-        return caches.open(cacheName).then(function(cache) {
-          // cache.put(event.request, response.clone());
-          return response;
-        }).catch(function(error) {
-          console.error(error);
-        });
+        return response;
       }).catch(function(error) {
         console.error(error);
       });

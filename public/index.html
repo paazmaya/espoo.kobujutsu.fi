@@ -198,10 +198,8 @@
 
     <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/offline-service-worker.js', {scope: '/'}).then(function(reg) {
-        console.log('Registration succeeded. Scope is ' + reg.scope);
-      }).catch(function(error) {
-        console.log('Registration failed with ' + error);
+      navigator.serviceWorker.register('/offline-service-worker.js', {scope: '/'}).catch(function(error) {
+        console.error('Registration failed with ' + error);
       });
     }
     </script>

@@ -1,18 +1,21 @@
 
-var cacheName = '20161224a';
+var cacheName = '20170612a';
 
+// index.html should be only used when offline, in order to have latest content always shown.
 var cacheFiles = [
-  '/',
   '/index.html',
   '/favicon.ico',
-  '/ohjaaja-jukka.jpg',
-  '/ohjaaja-kari.jpg',
-  '/ohjaaja-kimmo.jpg',
-  '/rkhsk-nunchaku.png',
-  '/rkhsk-nunchaku-icon-60.png',
-  '/rkhsk-logo.svg',
-  '/yuishinkai-logo.svg',
-  '/offline.html'
+  '/assets/default.css',
+  '/assets/ohjaaja-jukka.jpg',
+  '/assets/ohjaaja-kari.jpg',
+  '/assets/ohjaaja-kimmo.jpg',
+  '/assets/ohjaaja-jukka-300.jpg',
+  '/assets/ohjaaja-kari-300.jpg',
+  '/assets/ohjaaja-kimmo-300.jpg',
+  '/assets/rkhsk-nunchaku.png',
+  '/assets/rkhsk-nunchaku-icon-60.png',
+  '/assets/rkhsk-logo.svg',
+  '/assets/yuishinkai-logo.svg'
 ];
 
 this.addEventListener('install', function(event) {
@@ -39,7 +42,7 @@ this.addEventListener('fetch', function(event) {
         console.error(error);
       });
     }).catch(function() {
-      return caches.match('/offline.html');
+      return caches.match('/index.html');
     })
   );
 });

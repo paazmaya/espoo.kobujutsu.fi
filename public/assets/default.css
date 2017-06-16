@@ -41,7 +41,7 @@ header, section, footer {
 header, footer, header a, footer a, header a:visited, footer a:visited {
   background: #2f2926;
   color: white;
-  text-shadow: 0 0 0.5em #2f2926;
+  text-shadow: 0 0 0.5em #2f2926, 0 0 0.2em #2f2926;
   text-decoration: none;
 }
 

@@ -46,10 +46,16 @@ header, footer, header a, footer a, header a:visited, footer a:visited {
 }
 
 header {
-  background-image: url('/assets/rkhsk-nunchaku.png');
+  background-image: url('/assets/rkhsk-nunchaku-754.png');
   background-size: cover;
   min-height: 10em;
   background-position: 50% 50%;
+}
+
+@media only screen and (min-width: 820px) {
+  header {
+    background-image: url('/assets/rkhsk-nunchaku-1507.png');
+  }
 }
 
 h2 {

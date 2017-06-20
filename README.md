@@ -7,6 +7,22 @@ The web site is hosted at [Netlify](https://www.netlify.com/), for free since cr
 
 Service Worker could be used for caching assets, but need to focus on it...
 
+## Testing with sitespeed.io
+
+Install [the `sitespeed.io`](https://www.sitespeed.io/documentation/sitespeed.io/) command line tool via [`npm`, that comes with Node.js](https://nodejs.org/en/download/):
+
+```sh
+npm install --global sitespeed.io
+```
+
+Execute:
+
+```sh
+sitespeed.io https://espoo.kobujutsu.fi
+```
+
+Results will appear in the folder `sitespeed-results/espoo.kobujutsu.fi/`.
+
 ## License
 
 Licensed under [the MIT license](LICENSE).

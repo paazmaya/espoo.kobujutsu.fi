@@ -7,6 +7,12 @@ The web site is hosted at [Netlify](https://www.netlify.com/), for free since cr
 
 Service Worker could be used for caching assets, but need to focus on it...
 
+Note that I had to play with [SRI](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity):
+
+```sh
+shasum -a 256 public/assets/default.css | xxd -r -p | base64
+```
+
 ## Testing with sitespeed.io
 
 Install [the `sitespeed.io`](https://www.sitespeed.io/documentation/sitespeed.io/) command line tool via [`npm`, that comes with Node.js](https://nodejs.org/en/download/):

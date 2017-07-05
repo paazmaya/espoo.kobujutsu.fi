@@ -13,6 +13,9 @@ Note that I had to play with [SRI](https://developer.mozilla.org/en-US/docs/Web/
 shasum -a 256 public/assets/default.css | xxd -r -p | base64
 ```
 
+CSS should be passed through [online Autoprefixer at `autoprefixer.github.io`](https://autoprefixer.github.io/).
+Using there the option `"last 4 version"`.
+
 ## Testing with sitespeed.io
 
 Install [the `sitespeed.io`](https://www.sitespeed.io/documentation/sitespeed.io/) command line tool via [`npm`, that comes with Node.js](https://nodejs.org/en/download/):

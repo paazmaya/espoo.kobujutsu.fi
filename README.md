@@ -21,7 +21,7 @@ Using there the option `"last 4 version"`.
 Install [the `sitespeed.io`](https://www.sitespeed.io/documentation/sitespeed.io/) command line tool via [`npm`, that comes with Node.js](https://nodejs.org/en/download/):
 
 ```sh
-npm install --global sitespeed.io
+[sudo] npm install --global sitespeed.io
 ```
 
 Execute:
@@ -31,6 +31,20 @@ sitespeed.io https://espoo.kobujutsu.fi
 ```
 
 Results will appear in the folder `sitespeed-results/espoo.kobujutsu.fi/`.
+
+## Testing with sonar
+
+Install [the `sonar`](https://sonarwhal.com/) command line tool via [`npm`, that comes with Node.js](https://nodejs.org/en/download/):
+
+```sh
+[sudo] npm install --global @sonarwhal/sonar
+```
+
+The configuration for it is already available in the file called `.sonarrc` and used via:
+
+```sh
+sonar https://espoo.kobujutsu.fi
+```
 
 ## License
 

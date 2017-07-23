@@ -30,7 +30,8 @@ Execute:
 sitespeed.io https://espoo.kobujutsu.fi
 ```
 
-Results will appear in the folder `sitespeed-results/espoo.kobujutsu.fi/`.
+Results will appear in the folder `site
+speed-results/espoo.kobujutsu.fi/`.
 
 ## Testing with sonar
 

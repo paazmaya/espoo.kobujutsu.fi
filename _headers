@@ -1,0 +1,7 @@
+# Anything under assets and icons should have long cache lifetime
+/assets/*
+  # One year
+  Cache-Control: max-age=31536000, public
+/icons/*
+  # One year
+  Cache-Control: max-age=31536000, public

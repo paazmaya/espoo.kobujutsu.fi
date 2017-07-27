@@ -125,6 +125,16 @@ li {
   width: 100%;
 }
 
+.face-image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 175px;
+          flex: 0 0 175px;
+  width: 175px;
+  height: 140px;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
+
 @media only screen and (max-width: 28em) {
   .face-info {
     -webkit-box-orient: vertical;
@@ -136,14 +146,4 @@ li {
     -ms-flex: 0 0 140px;
         flex: 0 0 140px;
   }
-}
-
-.face-image {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 175px;
-          flex: 0 0 175px;
-  width: 175px;
-  height: 140px;
-  margin-right: 1em;
-  margin-bottom: 0.5em;
 }

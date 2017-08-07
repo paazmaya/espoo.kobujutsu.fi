@@ -18,7 +18,7 @@ Using there the option `"last 4 version"`.
 
 ## Testing with CrossBrowserTesting
 
-They offer a free version for Open Source...
+Cross browser testing provided for free by [![CrossBrowserTesting](crossbrowsertesting-logo.png)](https://crossbrowsertesting.com/).
 
 ## Testing with sitespeed.io
 

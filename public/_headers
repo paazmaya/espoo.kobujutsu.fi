@@ -9,3 +9,5 @@
   Accept-Ranges: bytes
   Timing-Allow-Origin: *
   Server: Yuishinkai Karate Server
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block

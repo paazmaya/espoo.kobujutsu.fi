@@ -11,3 +11,6 @@
   Server: Yuishinkai Karate Server
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
+
+/offline-service-worker.js
+  Cache-Control: max-age=0, no-cache

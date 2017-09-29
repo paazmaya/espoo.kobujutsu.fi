@@ -1,5 +1,5 @@
 
-var cacheName = '20170929a';
+var cacheName = '20170929b';
 
 // index.html should be only used when offline, in order to have latest content always shown.
 var cacheFilesFirst = [
@@ -14,7 +14,7 @@ var cacheFilesFirst = [
   '/assets/yuishinkai-logo.png'
 ];
 var cacheFilesSoon = [
-  '/assets/espoon-yuishinkai-ry-yhdistyksen-saannot-2016-12-210.pdf',
+  '/assets/espoon-yuishinkai-ry-yhdistyksen-saannot-2016-12-21.pdf',
   '/assets/ohjaaja-jukka-300.jpg',
   '/assets/ohjaaja-kari-300.jpg',
   '/assets/ohjaaja-kimmo-300.jpg',

@@ -5,16 +5,29 @@ Web site for "Espoon Yuishinkai ry", a martial club in Espoo, Finland.
 The web site is available at `espoo.kobujutsu.fi`, in which it is deployed immediately when something is pushed to this GitHub repository.
 The web site is hosted at [Netlify](https://www.netlify.com/), for free since creating open source stuff is great.
 
-Service Worker could be used for caching assets, but need to focus on it...
+## Service Worker
 
-Note that I had to play with [SRI](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity):
+Service Worker is used for caching assets, also [with `backgroundFetch`](https://philna.sh/blog/2017/07/04/experimenting-with-the-background-fetch-api/).
+However, buy default the network is used, and only when it fails, then local cache is utilised.
+
+## Sub-resource Integrity
+
+I just had to play with [SRI](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity):
 
 ```sh
 shasum -a 256 public/assets/default.css | xxd -r -p | base64
 ```
 
+But it is not used currently...
+
+## Cross browser supported styling
+
 CSS should be passed through [online Autoprefixer at `autoprefixer.github.io`](https://autoprefixer.github.io/).
 Using there the option `"last 4 version"`.
+
+## Testing with GhostInspector
+
+Functional and visual regression testing with latest Mozilla Firefox is provided for free by [GhostInspector](https://ghostinspector.com/).
 
 ## Testing with CrossBrowserTesting
 

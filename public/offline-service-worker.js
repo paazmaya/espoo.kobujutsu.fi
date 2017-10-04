@@ -1,5 +1,5 @@
 
-var cacheName = '20171003a';
+var cacheName = '20171004a';
 
 // index.html should be only used when offline, in order to have latest content always shown.
 var cacheFilesFirst = [
@@ -14,7 +14,6 @@ var cacheFilesFirst = [
   '/assets/yuishinkai-logo.png'
 ];
 var cacheFilesSoon = [
-  '/assets/espoon-yuishinkai-ry-yhdistyksen-saannot-2016-12-21.pdf',
   '/assets/ohjaaja-jukka-300.jpg',
   '/assets/ohjaaja-kari-300.jpg',
   '/assets/ohjaaja-kimmo-300.jpg',
@@ -52,6 +51,21 @@ this.addEventListener('activate', function(event) {
       }).map(function(key) {
         return caches.delete(key);
       }));
+    })
+  );
+});
+
+this.addEventListener('backgroundfetched', function(event) {
+  event.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+
+      const promises = event.fetches.map(({ request, response }) => {
+        if (response && response.ok) {
+          return cache.put(request, response.clone());
+        }
+      });
+
+      return Promise.all(promises);
     })
   );
 });

@@ -27,11 +27,13 @@ Using there the option `"last 4 version"`.
 
 ## Testing with GhostInspector
 
-Functional and visual regression testing with latest Mozilla Firefox is provided for free by [GhostInspector](https://ghostinspector.com/).
+Functional and visual regression testing with latest Mozilla Firefox is provided for free by
+[GhostInspector ![GhostInspector](ghostinspector-logo.png)](https://ghostinspector.com/).
 
 ## Testing with CrossBrowserTesting
 
-Cross browser testing provided for free by [![CrossBrowserTesting](crossbrowsertesting-logo.png)](https://crossbrowsertesting.com/).
+Cross browser testing provided for free by
+[CrossBrowserTesting ![CrossBrowserTesting](crossbrowsertesting-logo.png)](https://crossbrowsertesting.com/).
 
 ## Testing with sitespeed.io
 

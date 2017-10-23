@@ -1,5 +1,5 @@
 
-var cacheName = '20171004a';
+var cacheName = '20171023a';
 
 // index.html should be only used when offline, in order to have latest content always shown.
 var cacheFilesFirst = [

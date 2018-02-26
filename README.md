@@ -18,7 +18,7 @@ I just had to play with [SRI](https://developer.mozilla.org/en-US/docs/Web/Secur
 shasum -a 256 public/assets/default.css | xxd -r -p | base64
 ```
 
-But it is not used currently...
+But it is not used currently, since it requires additional step when adjusting styles and hence easily forgotten.
 
 ## Cross browser supported styling
 

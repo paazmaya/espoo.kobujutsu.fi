@@ -1,5 +1,5 @@
 
-var cacheName = '20180226a';
+var cacheName = '20180319a';
 
 // index.html should be only used when offline, in order to have latest content always shown.
 var cacheFilesFirst = [
@@ -9,6 +9,7 @@ var cacheFilesFirst = [
   '/assets/ohjaaja-jukka.jpg',
   '/assets/ohjaaja-kari.jpg',
   '/assets/ohjaaja-kimmo.jpg',
+  '/assets/ohjaaja-aaro.jpg',
   '/assets/rkhsk-logo.png',
   '/assets/rkhsk-nunchaku-754.png',
   '/assets/yuishinkai-logo.png'
@@ -17,6 +18,7 @@ var cacheFilesSoon = [
   '/assets/ohjaaja-jukka-300.jpg',
   '/assets/ohjaaja-kari-300.jpg',
   '/assets/ohjaaja-kimmo-300.jpg',
+  '/assets/ohjaaja-aaro-300.jpg',
   '/assets/rkhsk-nunchaku-1507.png',
   '/assets/rkhsk-nunchaku-square-1024.png'
 ];

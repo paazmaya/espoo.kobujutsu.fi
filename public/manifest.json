@@ -6,6 +6,7 @@
   "lang": "fi",
   "background_color": "#2f2926",
   "theme_color": "#2f2926",
+  "start_url": "/",
   "icons": [
     {
       "src": "/icons/icon-36x36.png",

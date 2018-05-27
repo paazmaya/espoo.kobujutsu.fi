@@ -40,6 +40,9 @@ this.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
+    }).catch(function(error) {
+      console.error('Matching request from cache or network failed.');
+      console.error(error);
     })
   );
 });
@@ -53,6 +56,9 @@ this.addEventListener('activate', function(event) {
       }).map(function(key) {
         return caches.delete(key);
       }));
+    }).catch(function(error) {
+      console.error('Cleaning up older cache failed.');
+      console.error(error);
     })
   );
 });
@@ -68,6 +74,9 @@ this.addEventListener('backgroundfetched', function(event) {
       });
 
       return Promise.all(promises);
+    }).catch(function(error) {
+      console.error('Fetching in background failed.');
+      console.error(error);
     })
   );
 });

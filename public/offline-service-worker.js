@@ -1,9 +1,9 @@
 
-var cacheName = '20180526a';
+var cacheName = '20180527a';
 
 // index.html should be only used when offline, in order to have latest content always shown.
 var cacheFilesFirst = [
-  '/index.html',
+  '/',
   '/favicon.ico',
   '/assets/default.css',
   '/assets/ohjaaja-jukka.jpg',

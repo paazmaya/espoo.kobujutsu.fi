@@ -3,6 +3,9 @@
   # One year
   Cache-Control: max-age=31536000, public
 
+/assets/default.css
+  X-Content-Type-Options: nosniff
+
 /icons/*
   # One year
   Cache-Control: max-age=31536000, public
@@ -26,3 +29,4 @@
 
 /offline-service-worker.js
   Cache-Control: max-age=0, no-cache
+  X-Content-Type-Options: nosniff

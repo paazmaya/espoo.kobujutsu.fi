@@ -6,10 +6,24 @@
   Server: Yuishinkai Karate Server
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
+/assets/*
+  Accept-Ranges: bytes
+  Cache-Control: max-age=31536000, immutable
+  Timing-Allow-Origin: *
+  Server: Yuishinkai Karate Server
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+/icons/*
+  Accept-Ranges: bytes
+  Cache-Control: max-age=31536000, immutable
+  Timing-Allow-Origin: *
+  Server: Yuishinkai Karate Server
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
 /assets/default.css
   X-Content-Type-Options: nosniff
 
-/index.html
+/
   # Age needs to be just under 3 minutes
   Cache-Control: max-age=179
   X-UA-Compatible: ie=edge

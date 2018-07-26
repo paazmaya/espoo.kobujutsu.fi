@@ -1,8 +1,8 @@
 
-var cacheName = '20180726a';
+var cacheName = '20180726b';
 
 var cacheFilesFirst = [
-  '/',
+  // '/',
   '/favicon.ico',
   '/assets/default.css',
   '/assets/ohjaaja-jukka.jpg',

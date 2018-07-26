@@ -1,7 +1,6 @@
 
-var cacheName = '20180527a';
+var cacheName = '20180726a';
 
-// index.html should be only used when offline, in order to have latest content always shown.
 var cacheFilesFirst = [
   '/',
   '/favicon.ico',

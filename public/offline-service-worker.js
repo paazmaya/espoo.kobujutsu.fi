@@ -1,5 +1,5 @@
 
-var cacheName = '20180726b';
+var cacheName = '20180808a';
 
 var cacheFilesFirst = [
   // '/',

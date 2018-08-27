@@ -160,18 +160,6 @@
     <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/offline-service-worker.js', {scope: '/'})
-        .then(function(reg) {
-          if ('backgroundFetch' in reg) {
-            setTimeout(function(event) {
-              var url = '/assets/espoon-yuishinkai-ry-yhdistyksen-saannot-2016-12-21.pdf';
-              reg.backgroundFetch.fetch('large-file', [new Request(url)], {
-                title: 'Downloading large image'
-              }).then(function(backgroundFetch) {
-                console.log(backgroundFetch);
-              });
-            }, 4000); // Four seconds
-          }
-        })
         .catch(function(error) {
           console.error('Registration failed with ' + error);
         });

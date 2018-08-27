@@ -1,30 +1,32 @@
 
-var cacheName = '20180808a';
+var VERSION = '20180827b';
+var INDEX = '/';
 
 var cacheFilesFirst = [
-  // '/',
+  INDEX,
   '/favicon.ico',
+  '/manifest.webmanifest',
   '/assets/default.css',
-  '/assets/ohjaaja-jukka.jpg',
-  '/assets/ohjaaja-kari.jpg',
-  '/assets/ohjaaja-kimmo.jpg',
-  '/assets/ohjaaja-aaro.jpg',
   '/assets/rkhsk-logo.png',
   '/assets/rkhsk-nunchaku-754.png',
   '/assets/yuishinkai-logo.png'
 ];
 var cacheFilesSoon = [
-  '/assets/ohjaaja-jukka-300.jpg',
-  '/assets/ohjaaja-kari-300.jpg',
-  '/assets/ohjaaja-kimmo-300.jpg',
-  '/assets/ohjaaja-aaro-300.jpg',
+  //'/assets/ohjaaja-jukka-300.jpg',
+  //'/assets/ohjaaja-kari-300.jpg',
+  //'/assets/ohjaaja-kimmo-300.jpg',
+  //'/assets/ohjaaja-aaro-300.jpg',
+  '/assets/ohjaaja-jukka.jpg',
+  '/assets/ohjaaja-kari.jpg',
+  '/assets/ohjaaja-kimmo.jpg',
+  '/assets/ohjaaja-aaro.jpg',
   '/assets/rkhsk-nunchaku-1507.png',
   '/assets/rkhsk-nunchaku-square-1024.png'
 ];
 
 this.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
+    caches.open(VERSION).then(function(cache) {
       cache.addAll(cacheFilesSoon);
       return cache.addAll(cacheFilesFirst);
     }).catch(function(error) {
@@ -36,45 +38,37 @@ this.addEventListener('install', function(event) {
 
 // Primarily use cache but fetch from the network when not found
 this.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
-    }).catch(function(error) {
-      console.error('Matching request from cache or network failed.');
-      console.error(error);
-    })
-  );
+  if (event.request.url === INDEX) {
+    event.respondWith(
+      fetch(event.request).catch(function() {
+        return caches.match(event.request);
+      })
+    );
+  }
+  else {
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+        return response || fetch(event.request);
+      }).catch(function(error) {
+        console.error('Matching request from cache or network failed.');
+        console.error(error);
+      })
+    );
+  }
 });
+
 
 // Remove any caches that are not the current
 this.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(list) {
       return Promise.all(list.filter(function(key) {
-        return key !== cacheName;
+        return key !== VERSION;
       }).map(function(key) {
         return caches.delete(key);
       }));
     }).catch(function(error) {
       console.error('Cleaning up older cache failed.');
-      console.error(error);
-    })
-  );
-});
-
-this.addEventListener('backgroundfetched', function(event) {
-  event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-
-      const promises = event.fetches.map(({ request, response }) => {
-        if (response && response.ok) {
-          return cache.put(request, response.clone());
-        }
-      });
-
-      return Promise.all(promises);
-    }).catch(function(error) {
-      console.error('Fetching in background failed.');
       console.error(error);
     })
   );

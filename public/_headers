@@ -13,7 +13,7 @@
   Server: Yuishinkai Karate Server
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
-/icons/*
+/icons/*.png
   Accept-Ranges: bytes
   Cache-Control: max-age=31536000, immutable
   Timing-Allow-Origin: *

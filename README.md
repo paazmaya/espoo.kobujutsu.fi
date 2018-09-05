@@ -60,17 +60,19 @@ Results will appear in the folder `sitespeed-results/espoo.kobujutsu.fi/`.
 
 ## Testing with sonar
 
-Install [the `sonar`](https://sonarwhal.com/) command line tool via [`npm`, that comes with Node.js](https://nodejs.org/en/download/):
+Install [the `hint`](https://webhint.io) command line tool via [`npm`, that comes with Node.js](https://nodejs.org/en/download/):
 
 ```sh
-[sudo] npm install --global --engine-strict sonarwhal
+[sudo] npm install --global --engine-strict hint
 ```
 
-The configuration for it is already available in the file called `.sonarrc` and used via:
+The configuration for it is already available in the file called `.hintrc` and used via:
 
 ```sh
-sonar https://espoo.kobujutsu.fi
+npx hint https://espoo.kobujutsu.fi
 ```
+
+The report is written under `hint-report` folder. The [`npx` used in the above command](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with Node.js installation.
 
 ## License
 

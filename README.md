@@ -21,10 +21,8 @@ However, by default the network is used, and only when it fails, then local cach
 I just had to play with [SRI](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity):
 
 ```sh
-shasum -a 256 public/assets/default.css | xxd -r -p | base64
+shasum -a 384 public/assets/default.css | xxd -r -p | base64
 ```
-
-But it is not used currently, since it requires additional step when adjusting styles and hence easily forgotten.
 
 ## Cross browser supported styling
 

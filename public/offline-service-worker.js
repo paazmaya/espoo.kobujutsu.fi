@@ -1,9 +1,7 @@
 
-var VERSION = '20180905a';
-var INDEX = '/';
+var VERSION = '20180905b';
 
 var cacheFilesFirst = [
-  INDEX,
   '/favicon.ico',
   '/manifest.webmanifest',
   '/assets/default.css',
@@ -38,23 +36,14 @@ this.addEventListener('install', function(event) {
 
 // Primarily use cache but fetch from the network when not found
 this.addEventListener('fetch', function(event) {
-  if (event.request.url === INDEX) {
-    event.respondWith(
-      fetch(event.request).catch(function() {
-        return caches.match(event.request);
-      })
-    );
-  }
-  else {
-    event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      }).catch(function(error) {
-        console.error('Matching request from cache or network failed.');
-        console.error(error);
-      })
-    );
-  }
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    }).catch(function(error) {
+      console.error('Matching request from cache or network failed.');
+      console.error(error);
+    })
+  );
 });
 
 

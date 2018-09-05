@@ -31,7 +31,6 @@
   [headers.values]
     Cache-Control = "max-age=179"
     X-Frame-Options = "SAMEORIGIN"
-    X-UA-Compatible = "ie=edge"
     X-XSS-Protection = "1; mode=block"
 [[headers]]
   for = "/browserconfig.xml"

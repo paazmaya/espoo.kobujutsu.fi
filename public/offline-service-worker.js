@@ -1,5 +1,5 @@
 
-var VERSION = '20180827b';
+var VERSION = '20180905a';
 var INDEX = '/';
 
 var cacheFilesFirst = [

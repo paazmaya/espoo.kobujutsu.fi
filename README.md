@@ -24,6 +24,8 @@ I just had to play with [SRI](https://developer.mozilla.org/en-US/docs/Web/Secur
 shasum -a 384 public/assets/default.css | xxd -r -p | base64
 ```
 
+[It is currently supported by most popular browsers.](https://caniuse.com/#feat=subresource-integrity)
+
 ## Cross browser supported styling
 
 CSS should be passed through [online Autoprefixer at `autoprefixer.github.io`](https://autoprefixer.github.io/).
@@ -58,7 +60,7 @@ sitespeed.io https://espoo.kobujutsu.fi
 
 Results will appear in the folder `sitespeed-results/espoo.kobujutsu.fi/`.
 
-## Testing with sonar
+## Testing with Webhint
 
 Install [the `hint`](https://webhint.io) command line tool via [`npm`, that comes with Node.js](https://nodejs.org/en/download/):
 

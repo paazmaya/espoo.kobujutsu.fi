@@ -1,5 +1,5 @@
 
-var VERSION = '20180905b';
+var VERSION = '20180919a';
 
 var cacheFilesFirst = [
   '/favicon.ico',
@@ -18,8 +18,8 @@ var cacheFilesSoon = [
   '/assets/ohjaaja-kari.jpg',
   '/assets/ohjaaja-kimmo.jpg',
   '/assets/ohjaaja-aaro.jpg',
-  '/assets/rkhsk-nunchaku-1507.png',
-  '/assets/rkhsk-nunchaku-square-1024.png'
+  '/assets/rkhsk-nunchaku-1507.png'
+  //'/assets/rkhsk-nunchaku-square-1024.png'
 ];
 
 this.addEventListener('install', function(event) {

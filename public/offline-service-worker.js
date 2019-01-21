@@ -1,5 +1,5 @@
 
-var VERSION = '20181010a';
+var VERSION = '20190121a';
 
 var cacheFilesFirst = [
   '/favicon.ico',
@@ -10,14 +10,16 @@ var cacheFilesFirst = [
   '/assets/yuishinkai-logo.png'
 ];
 var cacheFilesSoon = [
+  //'/assets/ohjaaja-aaro-300.jpg',
   //'/assets/ohjaaja-jukka-300.jpg',
   //'/assets/ohjaaja-kari-300.jpg',
   //'/assets/ohjaaja-kimmo-300.jpg',
-  //'/assets/ohjaaja-aaro-300.jpg',
+  //'/assets/ohjaaja-Vesa-300.jpg',
+  '/assets/ohjaaja-aaro.jpg',
   '/assets/ohjaaja-jukka.jpg',
   '/assets/ohjaaja-kari.jpg',
   '/assets/ohjaaja-kimmo.jpg',
-  '/assets/ohjaaja-aaro.jpg',
+  '/assets/ohjaaja-vesa.jpg',
   '/assets/rkhsk-nunchaku-1507.png'
   //'/assets/rkhsk-nunchaku-square-1024.png'
 ];

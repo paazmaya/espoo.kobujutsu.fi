@@ -16,7 +16,7 @@ ID = "espoon-yuishinkai"
     Timing-Allow-Origin = "*"
 
 [[headers]]
-  for = "/assets/default.css"
+  for = "/assets/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
 

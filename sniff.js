@@ -1,5 +1,5 @@
 // Test with HTML_CodeSniffer via Chrome
-// npm i puppeteer-core html_codesniffer
+// npm i puppeteer-core html_codesniffer axe-core
 
 const puppeteer = require('puppeteer-core');
 
@@ -12,11 +12,22 @@ const puppeteer = require('puppeteer-core');
 
   await page.goto('https://espoo.kobujutsu.fi');
 
+  /*
   await page.addScriptTag({
     path: 'node_modules/HTML_CodeSniffer/build/HTMLCS.js'
   });
   await page.evaluate(function () {
     HTMLCS_RUNNER.run('WCAG2AA');
+  });
+  */
+
+  await page.addScriptTag({
+    path: 'node_modules/axe-core/axe.min.js'
+  });
+  await page.evaluate(function () {
+    axe.run(function (err, results) {
+      console.log(results);
+    });
   });
 
   await browser.close();

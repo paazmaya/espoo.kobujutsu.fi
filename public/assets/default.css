@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body, [role="main"] {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: black;
+  font-size: 100%;
+  line-height: 1.4;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-display: swap;
+  min-width: 18em;
+  background-color: #2f2926;
+  overflow-wrap: break-word;
+}
+
+body {
+  background-color: white;
+}
+
+a, a:visited {
+  color: #2f2926;
+}
+
+header, section, footer {
+  margin: 0;
+  padding: 0.1em 1em;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 840px) {
+  header, section, footer {
+    padding: 0.3em 5em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  header, section, footer {
+    padding: 0.4em 12em;
+  }
+}
+
+header, footer, header a, footer a, header a:visited, footer a:visited {
+  color: white;
+  text-shadow: 0 0 4px #2f2926, 0 0 6px #2f2926;
+  text-decoration: none;
+}
+
+header, footer {
+  background: #2f2926;
+  background-image: url('/assets/rkhsk-nunchaku-754.png');
+  background-size: cover;
+  min-height: 10em;
+  background-position: 50% 50%;
+}
+
+footer {
+  min-height: 8em;
+  height: 8em;
+}
+
+@media only screen and (min-width: 820px) {
+  header, footer {
+    background-image: url('/assets/rkhsk-nunchaku-1507.png');
+  }
+}
+
+h2 {
+  border-bottom: 2px solid #2f2926;
+  outline: none;
+}
+
+h2 a {
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  outline: none;
+}
+
+h2 a:hover::after {
+  content: '#';
+  display: block;
+  position: absolute;
+  color: #2f2926;
+  top: 0;
+  right: -1.2em;
+  width: 1em;
+  height: 1em;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+ul {
+  list-style: circle;
+  padding-left: 1.5em;
+}
+li {
+  margin-bottom: 0.5em;
+}
+
+.logo {
+  width: 130px;
+  float: left;
+  margin-right: 1em;
+}
+
+.face-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.face-info span {
+  /* looks like IE11 needs this */
+  width: 100%;
+}
+
+.face-image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 175px;
+          flex: 0 0 175px;
+  width: 175px;
+  height: 140px;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
+
+@media only screen and (max-width: 28em) {
+  .face-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .face-image {
+    -ms-flex: 0 0 140px;
+        -webkit-box-flex: 0;
+            flex: 0 0 140px;
+  }
+}

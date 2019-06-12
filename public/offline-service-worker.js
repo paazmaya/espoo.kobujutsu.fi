@@ -1,60 +1,66 @@
 
-var cacheName = '20161224a';
+var VERSION = '20190121a';
 
-var cacheFiles = [
-  '/',
-  '/index.html',
+var cacheFilesFirst = [
   '/favicon.ico',
-  '/ohjaaja-jukka.jpg',
-  '/ohjaaja-kari.jpg',
-  '/ohjaaja-kimmo.jpg',
-  '/rkhsk-nunchaku.png',
-  '/rkhsk-nunchaku-icon-60.png',
-  '/rkhsk-logo.svg',
-  '/yuishinkai-logo.svg',
-  '/offline.html'
+  '/manifest.webmanifest',
+  '/assets/default.css',
+  '/assets/rkhsk-logo.png',
+  '/assets/rkhsk-nunchaku-754.png',
+  '/assets/yuishinkai-logo.png'
+];
+var cacheFilesSoon = [
+  //'/assets/ohjaaja-aaro-300.jpg',
+  //'/assets/ohjaaja-jukka-300.jpg',
+  //'/assets/ohjaaja-kari-300.jpg',
+  //'/assets/ohjaaja-kimmo-300.jpg',
+  //'/assets/ohjaaja-Vesa-300.jpg',
+  '/assets/ohjaaja-aaro.jpg',
+  '/assets/ohjaaja-jukka.jpg',
+  '/assets/ohjaaja-kari.jpg',
+  '/assets/ohjaaja-kimmo.jpg',
+  '/assets/ohjaaja-vesa.jpg',
+  '/assets/rkhsk-nunchaku-1507.png'
+  //'/assets/rkhsk-nunchaku-square-1024.png'
 ];
 
 this.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(cacheFiles);
+    caches.open(VERSION).then(function(cache) {
+      cache.addAll(cacheFilesSoon);
+      return cache.addAll(cacheFilesFirst);
     }).catch(function(error) {
+      console.error('Getting everything in cache failed.');
       console.error(error);
     })
   );
 });
 
+// Primarily use cache but fetch from the network when not found
 this.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.match(event.request).then(function(resp) {
-      console.log('event.request.url', event.request.url);
-      console.log('resp', resp);
-      if (resp) {
-        return resp;
-      }
-      return fetch(event.request).then(function(response) {
-        return response;
-      }).catch(function(error) {
-        console.error(error);
-      });
-    }).catch(function() {
-      return caches.match('/offline.html');
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    }).catch(function(error) {
+      console.error('Matching request from cache or network failed.');
+      console.error(error);
     })
   );
 });
 
+
 // Remove any caches that are not the current
 this.addEventListener('activate', function(event) {
   event.waitUntil(
-    caches.keys().then(function(keyList) {
-      return Promise.all(keyList.map(function(key) {
-        if (key !== cacheName) {
-          return caches.delete(key);
-        }
-
-        return true;
+    caches.keys().then(function(list) {
+      return Promise.all(list.filter(function(key) {
+        return key !== VERSION;
+      }).map(function(key) {
+        return caches.delete(key);
       }));
+    }).catch(function(error) {
+      console.error('Cleaning up older cache failed.');
+      console.error(error);
     })
   );
 });

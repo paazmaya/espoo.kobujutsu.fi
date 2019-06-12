@@ -1,0 +1,44 @@
+# https://www.netlify.com/docs/netlify-toml-reference/
+
+[Settings]
+ID = "espoon-yuishinkai"
+
+[context.production]
+  publish = "public"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Accept-Ranges = "bytes"
+    Cache-Control = "max-age=31536000, immutable"
+    Server = "Kashiyama Dojo Server"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Timing-Allow-Origin = "*"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "max-age=179"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+
+[[headers]]
+  for = "/browserconfig.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+
+[[headers]]
+  for = "/offline-service-worker.js"
+  [headers.values]
+    Cache-Control = "max-age=0, no-cache"
+    X-Content-Type-Options = "nosniff"

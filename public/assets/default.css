@@ -22,6 +22,7 @@ html {
 }
 
 body {
+  position: relative;
   background-color: white;
 }
 
@@ -160,4 +161,27 @@ li {
         -webkit-box-flex: 0;
             flex: 0 0 140px;
   }
+}
+
+#offline-notification {
+  display: block;
+  position: fixed;
+  top: 42vh;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #2f2926;
+  color: white;
+  font-weight: bold;
+  padding: 1.5rem;
+}
+
+#offline-notification p {
+  padding: 1rem;
+  margin: 0;
+  border: 2px solid white;
+}
+
+.hidden {
+  display: none !important;
 }

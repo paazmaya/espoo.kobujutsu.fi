@@ -1,7 +1,8 @@
 
-var VERSION = '20190121a';
+var VERSION = '20200720b';
 
 var cacheFilesFirst = [
+  //'/',
   '/favicon.ico',
   '/manifest.webmanifest',
   '/assets/default.css',
@@ -36,8 +37,9 @@ this.addEventListener('install', function(event) {
   );
 });
 
-// Primarily use cache but fetch from the network when not found
+// Primarily use cache but fetch from the network when not found, except for html
 this.addEventListener('fetch', function(event) {
+  console.log('fetch - event.request', event.request);
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
@@ -47,7 +49,6 @@ this.addEventListener('fetch', function(event) {
     })
   );
 });
-
 
 // Remove any caches that are not the current
 this.addEventListener('activate', function(event) {

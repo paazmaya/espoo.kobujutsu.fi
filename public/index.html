@@ -181,12 +181,24 @@
       <p><a href="https://github.com/paazmaya/espoo.kobujutsu.fi" class="link-github" title="Muokkaa sivuja GitHub-palvelun kautta">&copy; Espoon Yuishinkai ry</a> (Y-tunnus: 3079737-2)</p>
     </footer>
 
+    <aside id="offline-notification" class="hidden">
+      <p>Näyttää siltä että internet-yhteys on katkolla ja siksi näiden sivujen viimeisintä
+        versiota voi olla tällä hetkellä vaikea saada ladattua.</p>
+    </aside>
+
     <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/offline-service-worker.js', {scope: '/'})
         .catch(function(error) {
           console.error('Registration failed with ' + error);
         });
+
+        if ('PushManager' in window) {
+          
+        }
+
+      // In case there comes a message back stating that we are offline, remove the "hidden" class
+      document.querySelector('#offline-notification').classList.remove('hidden');
     }
     </script>
 

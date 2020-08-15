@@ -16,6 +16,18 @@ ID = "espoon-yuishinkai"
     Timing-Allow-Origin = "*"
 
 [[headers]]
+  for = "*.avif"
+  [headers.values]
+    Content-Type = "image/avif"
+    Content-Disposition = "inline"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Content-Type = "image/webp"
+    Content-Disposition = "inline"
+
+[[headers]]
   for = "/assets/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"

@@ -11,6 +11,15 @@ The web site is hosted at [Netlify](https://www.netlify.com/), for free since cr
 The site is configured to only allow secured connections (via `https`) and
 the certificates for it are provided for free by [Let's Encrypt](https://letsencrypt.org/).
 
+## Running locally with Netlify Dev
+
+```sh
+npm install --global netlify-cli
+netlify dev
+```
+
+Now site is available at [`http://localhost:8888`](http://localhost:8888).
+
 ## Service Worker
 
 Service Worker is used for caching assets, also
@@ -26,6 +35,18 @@ shasum -a 384 public/assets/default.css | xxd -r -p | base64
 ```
 
 [It is currently supported by most popular browsers.](https://caniuse.com/#feat=subresource-integrity)
+
+## Various image formats
+
+In addition to the common jpeg, there are webp and avif variants available, where
+supported, as determined by the `picture` element.
+
+https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/
+
+```sh
+avifenc --min 32 --max 42 public/assets/ohjaaja-jukka.jpg public/assets/ohjaaja-jukka.avif
+cwebp -q 75 public/assets/ohjaaja-jukka.jpg -o public/assets/ohjaaja-jukka.webp
+```
 
 ## Cross browser supported styling
 

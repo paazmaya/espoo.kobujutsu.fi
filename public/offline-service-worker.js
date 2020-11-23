@@ -24,7 +24,7 @@ var cacheFilesSoon = [
   //'/assets/rkhsk-nunchaku-square-1024.png'
 ];
 
-this.addEventListener('install', function(event) {
+self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(VERSION).then(function(cache) {
       cache.addAll(cacheFilesSoon);
@@ -37,7 +37,7 @@ this.addEventListener('install', function(event) {
 });
 
 // Primarily use cache but fetch from the network when not found
-this.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
@@ -50,7 +50,7 @@ this.addEventListener('fetch', function(event) {
 
 
 // Remove any caches that are not the current
-this.addEventListener('activate', function(event) {
+self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(list) {
       return Promise.all(list.filter(function(key) {

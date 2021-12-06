@@ -90,7 +90,7 @@ Install [the `hint`](https://webhint.io) command line tool via [`npm`, that come
 [sudo] npm install --global --engine-strict hint
 ```
 
-The configuration for it is already available in the file called `.hintrc` and used via:
+The tool can be used via:
 
 ```sh
 npx hint https://espoo.kobujutsu.fi

@@ -5,6 +5,7 @@
 ![Visual Regression Status](https://api.ghostinspector.com/v1/suites/595b6dd7a66a5e53b4a3cd3d/status-badge)
 [![Testcafe CI](https://github.com/paazmaya/espoo.kobujutsu.fi/actions/workflows/testcafe.yml/badge.svg)](https://github.com/paazmaya/espoo.kobujutsu.fi/actions/workflows/testcafe.yml)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=paazmaya_espoo.kobujutsu.fi&metric=code_smells)](https://sonarcloud.io/dashboard?id=paazmaya_espoo.kobujutsu.fi)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b8499483-a87c-4808-a035-7e56a6f28a34/deploy-status)](https://app.netlify.com/sites/espoon-yuishinkai/deploys)
 
 The web site is available at `espoo.kobujutsu.fi`, in which it is deployed immediately when something is pushed to this GitHub repository.
 The web site is hosted at [Netlify](https://www.netlify.com/), for free since creating open source stuff is great.
@@ -53,13 +54,6 @@ cwebp -q 75 public/assets/ohjaaja-jukka.jpg -o public/assets/ohjaaja-jukka.webp
 
 CSS should be passed through [online Autoprefixer at `autoprefixer.github.io`](https://autoprefixer.github.io/).
 Using there the option `"last 4 version"`.
-
-## Testing with GhostInspector
-
-[![GhostInspector](ghostinspector-logo.png)](https://ghostinspector.com/)
-
-Functional and visual regression testing with latest Mozilla Firefox is provided for free by
-[GhostInspector(https://ghostinspector.com/).
 
 ## Testing with CrossBrowserTesting
 

@@ -40,3 +40,6 @@ jspm_packages
 
 # mac
 .DS_Store
+
+# Local Netlify folder
+.netlify

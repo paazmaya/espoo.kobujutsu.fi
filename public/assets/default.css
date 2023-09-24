@@ -61,6 +61,14 @@ header, footer {
   background-position: 50% 50%;
 }
 
+a:hover, a:focus {
+  text-decoration: none;
+  filter: drop-shadow(0 0.1rem 0.3rem #2f2926);
+}
+header a:hover, footer a:hover, header a:focus, footer a:focus {
+  text-decoration: underline;
+}
+
 footer {
   min-height: 8em;
   height: 8em;

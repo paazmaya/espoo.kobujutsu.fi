@@ -1,5 +1,5 @@
 
-var VERSION = '20230924a';
+var VERSION = '20230924b';
 
 var cacheFilesFirst = [
   '/favicon.ico',

@@ -17,6 +17,7 @@ ID = "espoon-yuishinkai"
     Server = "Kashiyama Dojo Server"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     Timing-Allow-Origin = "*"
+    X-Content-Type-Options = "nosniff"
 
 [[headers]]
   for = "*.avif"
@@ -29,11 +30,6 @@ ID = "espoon-yuishinkai"
   [headers.values]
     Content-Type = "image/webp"
     Content-Disposition = "inline"
-
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
 
 [[headers]]
   for = "/"
@@ -56,4 +52,3 @@ ID = "espoon-yuishinkai"
   for = "/offline-service-worker.js"
   [headers.values]
     Cache-Control = "max-age=0, no-cache"
-    X-Content-Type-Options = "nosniff"

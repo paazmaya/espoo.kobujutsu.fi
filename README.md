@@ -55,12 +55,6 @@ cwebp -q 75 public/assets/ohjaaja-jukka.jpg -o public/assets/ohjaaja-jukka.webp
 CSS should be passed through [online Autoprefixer at `autoprefixer.github.io`](https://autoprefixer.github.io/).
 Using there the option `"last 4 version"`.
 
-## Testing with CrossBrowserTesting
-
-[![CrossBrowserTesting](crossbrowsertesting-logo.png)](https://crossbrowsertesting.com/).
-
-Cross browser testing provided for free by [CrossBrowserTesting](https://crossbrowsertesting.com/).
-
 ## Testing with sitespeed.io
 
 Install [the `sitespeed.io`](https://www.sitespeed.io/documentation/sitespeed.io/) command line tool via [`npm`, that comes with Node.js](https://nodejs.org/en/download/):

@@ -1,7 +1,7 @@
 
-var VERSION = '20230924b';
+const VERSION = '20230924b';
 
-var cacheFilesFirst = [
+const cacheFilesFirst = [
   '/favicon.ico',
   '/manifest.webmanifest',
   '/assets/default.css',
@@ -9,7 +9,7 @@ var cacheFilesFirst = [
   '/assets/rkhsk-nunchaku-754.png',
   '/assets/yuishinkai-logo.png'
 ];
-var cacheFilesSoon = [
+const cacheFilesSoon = [
   //'/assets/ohjaaja-aaro-300.jpg',
   //'/assets/ohjaaja-jukka-300.jpg',
   //'/assets/ohjaaja-kari-300.jpg',

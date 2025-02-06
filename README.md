@@ -3,7 +3,6 @@
 > Web site for "Espoon Yuishinkai ry", a martial club in Espoo, Finland.
 
 ![Visual Regression Status](https://api.ghostinspector.com/v1/suites/595b6dd7a66a5e53b4a3cd3d/status-badge)
-[![Testcafe CI](https://github.com/paazmaya/espoo.kobujutsu.fi/actions/workflows/testcafe.yml/badge.svg)](https://github.com/paazmaya/espoo.kobujutsu.fi/actions/workflows/testcafe.yml)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=paazmaya_espoo.kobujutsu.fi&metric=code_smells)](https://sonarcloud.io/dashboard?id=paazmaya_espoo.kobujutsu.fi)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b8499483-a87c-4808-a035-7e56a6f28a34/deploy-status)](https://app.netlify.com/sites/espoon-yuishinkai/deploys)
 
